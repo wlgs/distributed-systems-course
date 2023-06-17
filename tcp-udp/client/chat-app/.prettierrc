@@ -1,0 +1,9 @@
+{
+  "tabWidth": 4,
+  "useTabs": false,
+  "bracketSameLine": true,
+  "printWidth": 80,
+  "editor.formatOnSave": true,
+  "trailingComma": "none",
+  "bracketSpacing": true
+}

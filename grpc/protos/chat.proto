@@ -1,0 +1,44 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.chat";
+option java_outer_classname = "ChatProto";
+option objc_class_prefix = "HLW";
+
+package chat;
+
+enum UserStatus {
+  ONLINE = 0;
+  OFFLINE = 1;
+  AWAY = 2;
+}
+
+
+service Chat {
+  rpc GetUserCount (ChatInformationRequest) returns (stream UserCountMessage) {}
+  rpc GetUserList (ChatInformationRequest) returns (stream UserListMessage) {}
+  rpc GetChatMessages (ChatInformationRequest) returns (stream ChatMessage) {}
+}
+
+message ChatInformationRequest {
+  string channelName = 1;
+}
+
+message UserCountMessage {
+  int32 count = 1;
+}
+
+message User {
+  string name = 1;
+  int32 id = 2;
+  UserStatus status = 3;
+}
+
+message UserListMessage {
+  repeated User users = 1;
+}
+
+message ChatMessage {
+  string message = 1;
+  User user = 2;
+}

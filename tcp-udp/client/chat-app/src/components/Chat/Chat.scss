@@ -1,0 +1,31 @@
+.b-chat {
+    .bubble-enter{
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    
+    .bubble-enter.bubble-enter-active{
+        opacity: 1;
+        transform: translateX(0);
+        transition: all 350ms ease-out;
+    }
+    
+    .bubble-leave{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+    .bubble-leave.bubble-leave-active{
+        opacity: 0;
+        transform: translateX(20px);
+        transition: all 350ms ease-out;
+    }
+    .chat-image:hover{
+        .chat-telephone-icon{
+            opacity:1;
+            transform: translate(0, 0rem);
+        }
+    }
+
+
+}
