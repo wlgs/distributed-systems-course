@@ -8,7 +8,7 @@ This repo contains all finished homework labs project.
 |----------|-------------:|:------|
 | 1 |  TCP/UDP | Browser Chat app (TCP) with audio/video calls (UDP) |
 | 2 |    REST   |   League of legends account checker |
-| 3 | RAY | Improved labs |
+| 3 | RAY | Lab exercise improvement |
 | 4 | GRPC/ICE |    Chat app (GRPC), ICE dev testing |
 | 5 | RabbitMQ | Galaxy Agency/Carriers with service queues and admin panel |
-| 6 | Zookeeper | Lab exercise|
+| 6 | Zookeeper | Lab exercise improvement|
