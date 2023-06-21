@@ -30,3 +30,28 @@ services:
     environment:
       ZOO_MY_ID: 3
       ZOO_SERVERS: server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181
+
+
+  cli1:
+    image: zookeeper
+    command: sh -c "echo './bin/zkCli.sh -server zoo1' > run.sh && chmod +x run.sh && tail -f /dev/null"
+    environment:
+      ZOO_SERVERS: server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181
+    depends_on:
+      - zoo1
+
+  cli2:
+    image: zookeeper
+    command: sh -c "echo './bin/zkCli.sh -server zoo2' > run.sh && chmod +x run.sh && tail -f /dev/null"
+    environment:
+      ZOO_SERVERS: server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181
+    depends_on:
+      - zoo2
+
+  cli3:
+    image: zookeeper
+    command: sh -c "echo './bin/zkCli.sh -server zoo3' > run.sh && chmod +x run.sh && tail -f /dev/null"
+    environment:
+      ZOO_SERVERS: server.1=zoo1:2888:3888;2181 server.2=zoo2:2888:3888;2181 server.3=zoo3:2888:3888;2181
+    depends_on:
+      - zoo3
